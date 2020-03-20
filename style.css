@@ -3,42 +3,28 @@ body{
 } 
 
 a, a:hover{
-    color: white
+    color:white;
+    font-size: 18px;
 }
+
+/* **************************HEADER CSS  */
 
 #picture-header {
     background-image: url('/bike-background.jpg');
     background-size: cover;
     background-position: center;
-    height: 150px;
-    margin-bottom: 20px;
+    height: 300px;
+}
+.titleNavbar{
+    font-size: 32px;
+}
+.breadcrumb-item{
+    font-size: 22px;
+    font-weight: bold;
 }
 
-.card {
-  margin-bottom: 20px;
-}
-.basket-img{
-    width: 170px;
-}
+/* ***************************PAGE HOME CSS  */
 
-.table{
-    background-color: green;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center;s */
-    width: 90%;
-    
-    
-}
-
-.container{
-    background-color: red;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* width: 100%; */
-}
 .bodyHome{
     background-image: url("bike-background.jpg");
     background-repeat: no-repeat;
@@ -60,7 +46,50 @@ a, a:hover{
     border-radius: 5px;
   }
 
+/* *************************PAGE INDEX CSS  */
 
+.btn{
+    margin-left: 5px;
+    margin-bottom: 10px;
+    padding : 2px 8px;
+}
+.card {
+    margin-bottom: 20px;
+  }
+  .basket-img{
+      width: 170px;
+  }  
+.container{
+    /* background-color: red; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    /* width: 100%; */
+}
+.card-text{
+    font-weight: bold;
+}
+.desc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    /* background-color: purple; */
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
+.col{
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
 .row{
     background-color: blue;
     width:100%;
@@ -69,35 +98,29 @@ a, a:hover{
 
 }
 
-.col{
-    background-color: pink;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px;
-}
+/* ***************************PAGE SHOP CSS  */
 
-.card{
-    /* background-color: purple; */
-    display: flex;
-    margin: 10px;
-    align-items: center;
+.table{
+    /* background-color: green; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center;s */
+    width: 90%;
 }
-
-.desc{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.colTitle{
+    font-size: 22px;
 }
-
-.card-text{
+img{
+    width:100px;
+}
+.totalBasket{
     font-weight: bold;
 }
 
-.btn{
-    margin-left: 5px;
-    margin-bottom: 10px;
-    padding : 2px 8px;
-
+.btn-checkOut{
+    font-weight: bold;
+}
+.divCheckOut{
+    /* background-color: indigo; */
+    margin: 5px 90px;
 }

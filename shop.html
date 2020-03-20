@@ -16,11 +16,23 @@
 <body>
 
 <!-- header -->
-<nav class="navbar navbar-light bg-dark">
-  <a class="navbar" href="index.html">
-  <img src="/bike-logo.svg" width="50" height="50" class="logo" alt="">
-      The Bike Shop Experience
-  </a>
+
+<div id="picture-header"> 
+  <nav class="navbar navbar-light">
+    <a class="navbar" href="index.html">
+    <img src="/bike-logo.svg"  width="100" height="100" class="logo" alt="">
+        <p class="titleNavbar">The Bike Shop Experience</p>
+    </a>
+  </nav>
+
+</div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class=" breadcrumb-item"><a href="home.html">Home</a></li>
+    <li class=" breadcrumb-item"><a href="index.html">Store</a></li>
+    <li class=" breadcrumb-item active" aria-current="page">Shop</li>
+  </ol>
 </nav>
 
 
@@ -29,11 +41,9 @@
 
 <div class="container">
   <table class="table">
-      <tr>
-          BASKET
-      </tr>
+
     <thead>
-      <tr>
+      <tr class="colTitle">
         <th scope="col">#</th>
         <th scope="col">Picture</th>
         <th scope="col">Model</th>
@@ -46,33 +56,32 @@
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>Tata</td>
-        <td>@mdo</td>
+        <td><img src="bike-1.jpg"></td>
+        <td>Marc Marquez</td>
+        <td>
+          <input type="text" name="Quantity" value="1">
+          <button type="button" class="btn btn-outline-primary"><i class="fas fa-sync"></i></button>
+        </td>
+        <td>579€</td>
         <td>Momo</td>
-        <td>8888</td>
+        <td><button type="button" class="btn btn-outline-primary"><i class="far fa-trash-alt"></i></button></td>
       </tr>
+      
+<!-- Row total basket  -->
       <tr>
-        <th scope="row">2</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>Tata</td>
-        <td>@mdo</td>
-        <td>Momo</td>
-        <td>8888</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>Tata</td>
-        <td>@mdo</td>
-        <td>Momo</td>
-        <td>8888</td>
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="totalBasket">Total Basket</td>
+        <td>xxx€</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+</div>
+<div class="divCheckOut text-right">
+  <button type="button" class="btn btn-outline-primary btn-checkOut">Check Out</button>
 </div>
 
 
