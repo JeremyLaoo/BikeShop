@@ -1,0 +1,146 @@
+body{
+    font-family: 'Darker Grotesque', sans-serif;
+    background-color: #f7f7f7;
+} 
+a, a:hover{
+    color:black;
+    font-size: 18px;
+}
+
+/* **************************HEADER CSS  */
+
+#picture-header {
+    background-image: url('/images/bike-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+.titleNavbar{
+    font-size: 32px;
+}
+.breadcrumb{
+    background-color:#f7f7f7
+}
+.breadcrumb-item{
+    font-size: 22px;
+    font-weight: bold;
+}
+.titleHeader{
+    color:white;
+}
+
+/* ***************************PAGE HOME CSS  */
+
+.bodyHome{
+    background-image: url("/images/bike-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.containerHome .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 28px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+/* *************************PAGE INDEX CSS  */
+
+.btn{
+    margin-left: 5px;
+    margin-bottom: 10px;
+    padding : 2px 8px;
+}
+.card {
+    height: 280px;
+    width: 240px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color:#e6e3e3;
+    /* background-color: indigo; */
+  }
+.basket-img{
+      width: 170px;
+  }
+.card-img-top{
+    margin-top: 20px;
+}
+.container{
+    /* background-color: red; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+.card-text{
+    font-weight: bold;
+}
+.desc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    /* background-color: purple; */
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
+.col{
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+.row{
+    /* background-color: #cd8d7b; */
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ***************************PAGE SHOP CSS  */
+
+.table{
+    /* background-color: green; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center;s */
+    width: 90%;
+    border-style: solid;
+    border-color: #e6e3e3;
+    border-radius: 20px;
+}
+
+.colTitle{
+    font-size: 22px;
+}
+img{
+    width:100px;
+}
+.totalBasket{
+    font-weight: bold;
+}
+
+.btn-checkOut{
+    font-weight: bold;
+}
+.divCheckOut{
+    /* background-color: indigo; */
+    margin: 5px 90px;
+}
+
+.titleBasket{
+    margin-left: 15px;
+}
