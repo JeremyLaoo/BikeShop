@@ -94,6 +94,7 @@ a, a:hover{
     display: flex;
     margin: 10px;
     align-items: center;
+    margin-left:40px;
 }
 .col{
     /* background-color: pink; */

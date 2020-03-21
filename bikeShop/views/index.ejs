@@ -13,11 +13,13 @@
 
 </head>
 
+
+
 <body>
 
   <div id="picture-header"> 
     <nav class="navbar navbar-light">
-      <a class="navbar" href="home">
+      <a class="navbar" href="/">
       <img src="/images/bike-logo.svg" width="50" height="50" class="logo" alt="">
       <p class="titleHeader">The Bike Shop Experience</p>
       </a>
@@ -25,95 +27,45 @@
   </div>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="home">Home</a></li>
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Store</li>
       <li class="breadcrumb-item"><a href="shop">Shop</a></li>
     </ol>
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3 ">
-        <div class="card shadow p-3 mb-5 bg-white rounded-xl">
-          <img src="/images/bike-1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Marc Marquez</p>
-          
-          <div class="desc">
-            <p class="price">579€</p>
-            <a href="shop" class="btn btn-outline-primary">Buy</a>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card shadow p-3 mb-5 bg-white rounded-xl">
-          <img src="/images/bike-2.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Fabio Quartararo</p>
-            <div class="desc">
-              <p class="price">579€</p>
-              <a href="shop" class="btn btn-outline-primary">Buy</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card shadow p-3 mb-5 bg-white rounded-xl">
-          <img src="/images/bike-3.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Michael Schumacher</p>
-            <div class="desc">
-              <p class="price">579€</p>
-              <a href="shop" class="btn btn-outline-primary">Buy</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card shadow p-3 mb-5 bg-white rounded-xl">
-          <img src="/images/bike-4.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Lewis Hamilton</p>
-            <div class="desc">
-              <p class="price">579€</p>
-              <a href="shop" class="btn btn-outline-primary">Buy</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card shadow p-3 mb-5 bg-white rounded-xl">
-          <img src="/images/bike-5.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Usain Bolt</p>
-            <div class="desc">
-              <p class="price">579€</p>
-              <a href="shop" class="btn btn-outline-primary">Buy</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card shadow p-3 mb-5 bg-white rounded-xl">
-          <img src="/images/bike-6.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Christophe Lemaitre</p>
-            <div class="desc">
-              <p class="price">579€</p>
-              <a href="shop" class="btn btn-outline-primary">Buy</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+  <div class="row">
+    <div class="col-12">
+      <div class="container"></div>
     </div>
   </div>
+
+  
+    <div class="row">
+
+      <% 
+        for(var i = 0; i<dataBike.length; i++) {
+      %>
+
+      <div class="col col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card shadow p-3 mb-5 bg-white rounded-xl">
+          <img src=<%= dataBike[i].url %> class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text"><%= dataBike[i].name %></p>
+            <div class="desc">
+              <p class="price"><%= dataBike[i].price %>€</p>
+              <a href="shop" class="btn btn-outline-primary">Buy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%
+        }
+      %>
+
+     
+    </div>
+  
   
  
 

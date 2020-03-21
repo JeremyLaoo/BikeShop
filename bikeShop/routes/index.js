@@ -10,21 +10,21 @@ var dataBike = [
   {name:"Lewis Hamilton", url:"/images/bike-4.jpg",price:"889"},
   {name:"Usain Bolt", url:"/images/bike-5.jpg",price:"999"},
   {name:"Christophe Lemaitre", url:"/images/bike-6.jpg",price:"1299"},
+  {name:"Laure Manaudou", url:"/images/bike-1.jpg",price:"889"},
+  {name:"Camille Lacourt", url:"/images/bike-3.jpg",price:"999"},
+  {name:"Shinkansen", url:"/images/bike-2.jpg",price:"1299"},
 ]
 
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-router.get('/home', function(req, res, next) {
-  res.render('home');
+  res.render('home', { title: 'Express' });
 });
 
 router.get('/index', function(req, res, next) {
-  res.render('index');
+  res.render('index', { dataBike: dataBike });
 });
+
 
 router.get('/shop', function(req, res, next) {
   res.render('shop');
