@@ -53,18 +53,29 @@
       </tr>
     </thead>
     <tbody>
+
+      <% 
+      var totalCmd = 0
+      for(var i = 0; i<dataCardBike.length; i++) {
+    %>
+
       <tr>
         <th scope="row">1</th>
-        <td><img src="/images/bike-1.jpg"></td>
-        <td>Marc Marquez</td>
+        <td><img src=<%= dataCardBike[i].url %>></td>
+        <td><%= dataCardBike[i].name %></td>
         <td>
           <input type="text" name="Quantity" value="1">
           <button type="button" class="btn btn-outline-primary"><i class="fas fa-sync"></i></button>
         </td>
-        <td>579€</td>
-        <td>Momo</td>
+        <td><%= dataCardBike[i].price %>€</td>
+        <td><%= dataCardBike[i].price*dataCardBike[i].quantity %>€</td>
         <td><button type="button" class="btn btn-outline-primary"><i class="far fa-trash-alt"></i></button></td>
       </tr>
+
+      <%
+      totalCmd += dataCardBike[i].price*dataCardBike[i].quantity
+        }
+      %>
       
 <!-- Row total basket  -->
       <tr>
@@ -73,7 +84,7 @@
         <td></td>
         <td></td>
         <td class="totalBasket">Total Basket</td>
-        <td>xxx€</td>
+        <td><%= totalCmd %>€</td>
         <td></td>
       </tr>
     </tbody>

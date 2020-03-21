@@ -15,6 +15,11 @@ var dataBike = [
   {name:"Shinkansen", url:"/images/bike-2.jpg",price:"1299"},
 ]
 
+var dataCardBike = [
+  {name: "Lewis Hamilton", url: "/images/bike-4.jpg", price: 889, quantity: 1},
+  {name: "Camille Lacourt", url: "/images/bike-3.jpg", price: 999, quantity: 2},
+]
+
 
 
 router.get('/', function(req, res, next) {
@@ -27,7 +32,7 @@ router.get('/index', function(req, res, next) {
 
 
 router.get('/shop', function(req, res, next) {
-  res.render('shop');
+  res.render('shop', {dataCardBike});
 });
 
 module.exports = router;
