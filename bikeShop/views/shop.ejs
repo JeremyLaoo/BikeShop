@@ -62,15 +62,15 @@
 
       <tr>
         <th scope="row"><%= i + 1%></th>
-        <td><img class="imgShop" src=<%= urlFromFront %>></td>
-        <td><%= nameFromFront %></td>
+        <td><img class="imgShop" src=<%=urlFromFront%>></td>
+        <td><%=nameFromFront%></td>
         <td>
           <input type="text" name="Quantity" value="1">
           <button type="button" class="btn btn-outline-primary"><i class="fas fa-sync"></i></button>
         </td>
-        <td><%= priceFromFront %>€</td>
-        <td><%= priceFromFront*dataCardBike[i].quantity %>€</td>
-        <td><button type="button" class="btn btn-outline-primary"><i class="far fa-trash-alt"></i></button></td>
+        <td><%=priceFromFront%>€</td>
+        <td><%=priceFromFront*dataCardBike[i].quantity%>€</td>
+        <td><a href="/delete-shop?position=<%=i%>" type="button" class="btn btn-outline-primary"><i class="far fa-trash-alt"></i></a></td>
       </tr>
 
       <%

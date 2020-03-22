@@ -40,4 +40,9 @@ router.get('/shop', function(req, res, next) {
   res.render('shop', {dataCardBike, nameFromFront, urlFromFront, priceFromFront});
 });
 
+router.get('/delete-shop', function(req, res, next) {
+  dataCardBike.splice(req.query.position,1)
+  res.render('shop', {dataCardBike});
+});
+
 module.exports = router;
