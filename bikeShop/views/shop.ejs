@@ -56,24 +56,25 @@
 
       <% 
       var totalCmd = 0
+    
       for(var i = 0; i<dataCardBike.length; i++) {
     %>
 
       <tr>
-        <th scope="row">1</th>
-        <td><img src=<%= dataCardBike[i].url %>></td>
-        <td><%= dataCardBike[i].name %></td>
+        <th scope="row"><%= i + 1%></th>
+        <td><img class="imgShop" src=<%= urlFromFront %>></td>
+        <td><%= nameFromFront %></td>
         <td>
           <input type="text" name="Quantity" value="1">
           <button type="button" class="btn btn-outline-primary"><i class="fas fa-sync"></i></button>
         </td>
-        <td><%= dataCardBike[i].price %>€</td>
-        <td><%= dataCardBike[i].price*dataCardBike[i].quantity %>€</td>
+        <td><%= priceFromFront %>€</td>
+        <td><%= priceFromFront*dataCardBike[i].quantity %>€</td>
         <td><button type="button" class="btn btn-outline-primary"><i class="far fa-trash-alt"></i></button></td>
       </tr>
 
       <%
-      totalCmd += dataCardBike[i].price*dataCardBike[i].quantity
+      totalCmd += priceFromFront*dataCardBike[i].quantity
         }
       %>
       
@@ -89,10 +90,14 @@
       </tr>
     </tbody>
   </table>
+
+  <div class="divCheckOut text-right">
+    <button type="button" class="btn btn-outline-primary btn-checkOut">Check Out</button>
+  </div>
+
+
 </div>
-<div class="divCheckOut text-right">
-  <button type="button" class="btn btn-outline-primary btn-checkOut">Check Out</button>
-</div>
+
 
 
 

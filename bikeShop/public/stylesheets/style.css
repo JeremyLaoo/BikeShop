@@ -121,14 +121,19 @@ a, a:hover{
     width: 90%;
     border-style: solid;
     border-color: #e6e3e3;
-    border-radius: 20px;
+    background-color: white;
+    
 }
+
 
 .colTitle{
     font-size: 22px;
 }
-img{
-    width:100px;
+.imgShop{
+    width:120px;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: #e6e3e3;
 }
 .totalBasket{
     font-weight: bold;
@@ -136,10 +141,12 @@ img{
 
 .btn-checkOut{
     font-weight: bold;
+    
 }
 .divCheckOut{
     /* background-color: indigo; */
     margin: 5px 90px;
+    margin-left: auto;
 }
 
 .titleBasket{

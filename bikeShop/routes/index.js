@@ -16,8 +16,8 @@ var dataBike = [
 ]
 
 var dataCardBike = [
-  {name: "Lewis Hamilton", url: "/images/bike-4.jpg", price: 889, quantity: 1},
-  {name: "Camille Lacourt", url: "/images/bike-3.jpg", price: 999, quantity: 2},
+  {name: "", url: "", price: "", quantity: 1},
+  
 ]
 
 
@@ -32,7 +32,12 @@ router.get('/index', function(req, res, next) {
 
 
 router.get('/shop', function(req, res, next) {
-  res.render('shop', {dataCardBike});
+  console.log('req.querySHOP :', req.query);
+  var nameFromFront = req.query.name;
+  console.log('nameFromFront :', nameFromFront);
+  var urlFromFront = req.query.url;
+  var priceFromFront = req.query.price;
+  res.render('shop', {dataCardBike, nameFromFront, urlFromFront, priceFromFront});
 });
 
 module.exports = router;
