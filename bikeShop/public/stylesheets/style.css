@@ -125,7 +125,6 @@ a, a:hover{
     
 }
 
-
 .colTitle{
     font-size: 22px;
 }
@@ -151,4 +150,8 @@ a, a:hover{
 
 .titleBasket{
     margin-left: 15px;
+}
+.noArticle{
+    margin-left: 15px;
+    margin-top : 30px; 
 }

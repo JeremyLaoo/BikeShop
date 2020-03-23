@@ -10,53 +10,53 @@ var dataBike = [
   {name:"Lewis Hamilton", url:"/images/bike-4.jpg",price:"889"},
   {name:"Usain Bolt", url:"/images/bike-5.jpg",price:"999"},
   {name:"Christophe Lemaitre", url:"/images/bike-6.jpg",price:"1299"},
-  {name:"Laure Manaudou", url:"/images/bike-1.jpg",price:"889"},
-  {name:"Camille Lacourt", url:"/images/bike-3.jpg",price:"999"},
-  {name:"Shinkansen", url:"/images/bike-2.jpg",price:"1299"},
+  {name:"Laure Manaudou", url:"/images/bike-7.jpg",price:"889"},
+  {name:"Camille Lacourt", url:"/images/bike-8.jpg",price:"999"},
+  {name:"Shinkansen", url:"/images/bike-9.jpg",price:"1299"},
 ]
-
-var dataCardBike = [
-  // {name: "", url: "", price: "", quantity: 1},
-  
-]
-
-
 
 router.get('/', function(req, res, next) {
+
+
   res.render('home', { title: 'Express' });
 });
 
 router.get('/index', function(req, res, next) {
-  res.render('index', { dataBike: dataBike });
+
+  console.log('req.session.dataCardBike :', req.session.dataCardBike);
+
+  if(req.session.dataCardBike == undefined){
+    req.session.dataCardBike = []
+  }
+
+  res.render('index', { dataBike: dataBike});
 });
 
 router.get('/shop', function(req, res, next) {
 
+
   console.log('req.querySHOP :', req.query);
   console.log('req.query.price :', req.query.price);
-  // var nameFromFront = req.query.name;
-  // console.log('nameFromFront :', nameFromFront);
-  // var urlFromFront = req.query.url;
-  // var priceFromFront = req.query.price;
 
-  dataCardBike.push({
+
+  req.session.dataCardBike.push({
     name: req.query.name,
     url : req.query.url,
     price: req.query.price,
     quantity:1
   })
 
-  console.log('dataCardBike :', dataCardBike);
+  console.log('dataCardBike :', req.session.dataCardBike);
 
 
-  res.render('shop', {dataCardBike: dataCardBike});
+  res.render('shop', {dataCardBike: req.session.dataCardBike});
 
 });
 
 router.get('/delete-shop', function(req, res, next) {
   console.log('req.queryDELETESHOP :', req.query);
-  dataCardBike.splice(req.query.position,1)
-  res.render('shop', {dataCardBike});
+  req.session.dataCardBike.splice(req.query.position,1)
+  res.render('shop', {dataCardBike: req.session.dataCardBike});
 });
 
 router.post('/update-shop', function(req, res) {
@@ -64,8 +64,8 @@ router.post('/update-shop', function(req, res) {
   var position = req.body.position;
   var newQuantity = req.body.quantity;
 
-  dataCardBike[position].quantity = newQuantity;
-  res.render('shop', { dataCardBike, position, newQuantity });
+  req.session.dataCardBike[position].quantity = newQuantity;
+  res.render('shop', { dataCardBike : req.session.dataCardBike, position, newQuantity });
 });
 
 module.exports = router;
