@@ -34,17 +34,30 @@ router.get('/index', function(req, res, next) {
 
 router.get('/shop', function(req, res, next) {
 
+  var alreadyExist = false;
+
+for(var i = 0 ; i<req.session.dataCardBike.length ; i++){
+  if(req.session.dataCardBike[i].name == req.query.name){
+    req.session.dataCardBike[i].quantity = Number(req.session.dataCardBike[i].quantity) + 1;
+    alreadyExist = true;
+  }
+}
+
+  if(alreadyExist == false){
+    req.session.dataCardBike.push({
+      name: req.query.name,
+      url : req.query.url,
+      price: req.query.price,
+      quantity:1
+    })
+  }
+
 
   console.log('req.querySHOP :', req.query);
   console.log('req.query.price :', req.query.price);
 
 
-  req.session.dataCardBike.push({
-    name: req.query.name,
-    url : req.query.url,
-    price: req.query.price,
-    quantity:1
-  })
+  
 
   console.log('dataCardBike :', req.session.dataCardBike);
 
