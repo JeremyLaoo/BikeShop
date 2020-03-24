@@ -1,6 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
+// Installation de l'API STRIPE 
+// Check this link https://stripe.com/docs/payments/checkout/one-time 
+// key API https://dashboard.stripe.com/test/apikeys 
+// npm install stripe puis intégrer la const ci dessous 
+
+const stripe = require('stripe')('sk_test_FeLaB0NNERoBGrbLIP2OLMcn00MqDFk5gB');
+
 /* GET home page. */
 
 var dataBike = [
@@ -32,11 +39,11 @@ router.get('/index', function(req, res, next) {
   res.render('index', { dataBike: dataBike});
 });
 
-router.get('/shop', function(req, res, next) {
+router.get('/shop', async function(req, res, next) {
 
   var alreadyExist = false;
 
-for(var i = 0 ; i<req.session.dataCardBike.length ; i++){
+for(var i = 0 ; i < req.session.dataCardBike.length ; i++){
   if(req.session.dataCardBike[i].name == req.query.name){
     req.session.dataCardBike[i].quantity = Number(req.session.dataCardBike[i].quantity) + 1;
     alreadyExist = true;
@@ -52,15 +59,22 @@ for(var i = 0 ; i<req.session.dataCardBike.length ; i++){
     })
   }
 
+  // const session = await stripe.checkout.sessions.create({
+  //   payment_method_types: ['card'],
+  //   line_items: [{
+  //     name: 'T-shirt',
+  //     amount: 500,
+  //     currency: 'eur',
+  //     quantity: 1,
+  //   }],
+  //   success_url: 'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
+  //   cancel_url: 'http://localhost:3000/',
+  // });
+
 
   console.log('req.querySHOP :', req.query);
   console.log('req.query.price :', req.query.price);
-
-
-  
-
   console.log('dataCardBike :', req.session.dataCardBike);
-
 
   res.render('shop', {dataCardBike: req.session.dataCardBike});
 
